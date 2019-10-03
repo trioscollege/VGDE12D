@@ -1,5 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿// using System.Collections;
+// using System.Collections.Generic;
+// 
+// These using directives are commented out, rather than removed all together...
+// As a personal habit, I tend to include these on scripts where I may need them in the future.
+// In VSCode, Ctrl + / (PC) or Cmd + / (Mac) will either add or remove a comment block on a line, 
+// or combination of lines you have selected/highlighted.
+// It's easier to simply add or remove the comment rather than retype the using line all together.
+
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
