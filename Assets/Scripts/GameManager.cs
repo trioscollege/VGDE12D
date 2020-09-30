@@ -1,10 +1,4 @@
-﻿// using System.Collections;
-// using System.Collections.Generic;
-// using UnityEngine.SceneManagement;
-// 
-// See note in PlayerController.cs re: Commented using statements
-
-using UnityEngine;
+﻿using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
@@ -58,5 +52,4 @@ public class GameManager : MonoBehaviour
             m_pauseMenu.SetActive(false);
         }
     }
-
 }
