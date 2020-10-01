@@ -9,9 +9,20 @@ public class RaycastExample : MonoBehaviour
 
     public int LineLength;
     public string RaycastTargetName;
+    public bool m_drawRays = false;
+    private LineRenderer m_lineRenderer;
 
     void Start(){
         LineLength = 3;
+        
+        // This is used to draw our raycast in both the Scene and Game windows.
+        m_lineRenderer = gameObject.AddComponent(typeof(LineRenderer)) as LineRenderer;
+        m_lineRenderer.sortingOrder = 10;
+        m_lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
+        m_lineRenderer.startColor = Color.cyan;
+        m_lineRenderer.endColor = Color.cyan;
+        m_lineRenderer.widthMultiplier = 0.05f;
+        m_lineRenderer.positionCount = 2;
     }
     
     void Update(){
@@ -40,7 +51,12 @@ public class RaycastExample : MonoBehaviour
             m_raycastDirection = Vector2.up;
         }
 
-        Debug.DrawRay(transform.position, m_raycastDirection*LineLength);
+        // If the user enabled the m_drawRays flag in the inspect, the line renderer will be updated to draw the active raycast.
+        if (m_drawRays)
+        {
+            m_lineRenderer.SetPosition(0, transform.position);
+            m_lineRenderer.SetPosition(1, transform.position + new Vector3(m_raycastDirection.x, m_raycastDirection.y, 0) * LineLength);
+        }
     }
 
     void PerformRaycast(){

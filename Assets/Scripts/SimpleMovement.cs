@@ -1,59 +1,47 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class SimpleMovement : MonoBehaviour
 {
 
     public Rigidbody2D m_rigidbody2D;
-    public Rigidbody m_rigidbody3D;
 
-    public float m_horizontal;
-    public float m_vertical;
+    private float m_horizontal;
+    private float m_vertical;
+    [HideInInspector]
     public float m_moveSpeed;
 
-    public float m_health;
-    
     void Start()
     {
         m_moveSpeed = 5.0f;
-        m_health = 50.0f;
 
-        if(m_rigidbody2D == null){
+        if (m_rigidbody2D == null)
+        {
             m_rigidbody2D = GetComponent<Rigidbody2D>();
-        }
-
-        if(m_rigidbody3D == null){
-            m_rigidbody3D = GetComponent<Rigidbody>();
         }
     }
 
     void Update()
     {
-
-        if(m_rigidbody2D != null || m_rigidbody3D != null){
+        if (m_rigidbody2D != null)
+        {
             ApplyRigidbodyMovement();
         }
-
-        if(m_rigidbody2D == null && m_rigidbody3D == null){
+        else
+        {
             ApplyNonRigidbodyMovement();
         }
     }
 
-    void ApplyRigidbodyMovement(){
+    void ApplyRigidbodyMovement()
+    {
         m_horizontal = Input.GetAxis("Horizontal");
         m_vertical = Input.GetAxis("Vertical");
 
-        if(m_rigidbody2D != null){
-            m_rigidbody2D.velocity = new Vector2(m_horizontal * m_moveSpeed, m_vertical * m_moveSpeed);
-        }
-
-        if(m_rigidbody3D != null){
-            m_rigidbody3D.velocity = new Vector2(m_horizontal * m_moveSpeed, m_vertical * m_moveSpeed);
-        }
+        m_rigidbody2D.velocity = new Vector2(m_horizontal * m_moveSpeed, m_vertical * m_moveSpeed);
     }
 
-    void ApplyNonRigidbodyMovement(){
+    void ApplyNonRigidbodyMovement()
+    {
         m_horizontal = Input.GetAxis("Horizontal");
         m_vertical = Input.GetAxis("Vertical");
 
