@@ -4,6 +4,8 @@ public class PlatformGenerator : MonoBehaviour
 {
     public GameObject[] m_platforms;
     public GameObject[] m_obstacles;
+    [Tooltip("Percent chance that an obstacle will spawn on a platform")]
+    public float m_obstacleSpawnChance = 25.0f;
 
     GameObject m_lastPlatform;
     Vector3 m_spawnPosition;
@@ -13,7 +15,7 @@ public class PlatformGenerator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        m_spawnPosition = new Vector2(20.0f, 0f);
+        m_spawnPosition = new Vector2(15.0f, 0f);
         CreatePlatform(true);
     }
 
@@ -49,5 +51,17 @@ public class PlatformGenerator : MonoBehaviour
         GameObject platform = m_platforms[Random.Range(0, m_platforms.Length)];
         m_lastPlatform = Instantiate(platform, spawnPoint, platform.transform.rotation);
         m_lastPlatform.transform.parent = transform;
+
+        CreateObstacle();
+    }
+
+    void CreateObstacle()
+    {
+        if (Random.Range(1.0f, 100.0f) <= m_obstacleSpawnChance)
+        {
+            Vector3 spawnPoint = m_lastPlatform.transform.position + Vector3.up;
+            GameObject obstacle = Instantiate(m_obstacles[Random.Range(0, m_obstacles.Length)], spawnPoint, Quaternion.identity);
+            obstacle.transform.parent = m_lastPlatform.transform;
+        }
     }
 }
