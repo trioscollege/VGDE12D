@@ -6,7 +6,9 @@ TagManager:
   tags:
   - Ground
   - Crate
+  - Rock
   - PauseMenu
+  - Killzone
   layers:
   - Default
   - TransparentFX

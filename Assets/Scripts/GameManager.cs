@@ -1,4 +1,5 @@
 ﻿
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,25 +11,34 @@ public class GameManager : MonoBehaviour
     // (Optional) Prevent non-singleton constructor use.
     protected GameManager() { }
 
-    // public bool to track if the game is in a paused state or not.
+    // Public bool to track if the game is in a paused state or not.
     [HideInInspector]
     public bool m_isPaused = false;
+    public bool m_playerDied = false;
 
     public float m_gameSpeed = 1.0f;
     public float m_speedIncrease = 0.1f;
 
-    void Awake() 
+    private float m_baseSpeed;
+
+    void Awake()
     {
-         if (Instance)
+        if (Instance)
         {
             Destroy(gameObject);
             return;
         }
-        else 
+        else
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
         }
+
+    }
+
+    void Start()
+    {
+        m_baseSpeed = m_gameSpeed;
     }
 
     void Update()
@@ -44,13 +54,13 @@ public class GameManager : MonoBehaviour
     public void PauseGame()
     {
         // Check to make sure the bool is false, indicating that the game is NOT paused at the moment...
-        if (!m_isPaused)
+        if (!m_isPaused && !m_playerDied)
         {
             // Set the timescale of the game to 0. This will disable actions/movements based on Rigidbodies.
             Time.timeScale = 0;
             // Set the m_isPaused bool to true, indicating a paused gamestate.
             m_isPaused = true;
-            
+
             // Turn on the PauseMenu canvas.
             GameObject.FindGameObjectWithTag("PauseMenu").GetComponent<Canvas>().enabled = true;
         }
@@ -79,7 +89,24 @@ public class GameManager : MonoBehaviour
     public void RestartGame()
     {
         m_isPaused = false;
+        m_playerDied = false;
         Time.timeScale = 1.0f;
-        SceneManager.LoadScene("PCGPlatformer");
+        m_gameSpeed = m_baseSpeed;
+        SceneManager.LoadSceneAsync("PCGPlatformer");
+    }
+
+    public void PlayerDied()
+    {
+        m_playerDied = true;
+        StartCoroutine(DeathKnell());
+    }
+
+    IEnumerator DeathKnell()
+    {
+        Time.timeScale = 0.3f;
+
+        yield return new WaitForSecondsRealtime(3f);
+
+        RestartGame();
     }
 }

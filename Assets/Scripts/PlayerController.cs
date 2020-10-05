@@ -120,11 +120,10 @@ public class PlayerController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        
-    }
-
-    void OnCollisionExit2D(Collision2D collision)
-    {
-       
+        if (collision.gameObject.CompareTag("Rock") || collision.gameObject.CompareTag("Killzone"))
+        {
+            m_animator.SetBool("Died", true);
+            GameManager.Instance.PlayerDied();
+        }
     }
 }
