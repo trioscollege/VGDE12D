@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<atlas>
+  <image>
+    <name>player</name>
+    <x>86</x>
+    <y>86</y>
+    <w>75</w>
+    <h>70</h>
+  </image>
+  <image>
+    <name>mothership</name>
+    <x>175</x>
+    <y>175</y>
+    <w>150</w>
+    <h>150</h>
+  </image>
+  <image>
+    <name>scout</name>
+    <x>255</x>
+    <y>339</y>
+    <w>75</w>
+    <h>75</h>
+  </image>
+  <image>
+    <name>civilian</name>
+    <x>170</x>
+    <y>86</y>
+    <w>75</w>
+    <h>75</h>
+  </image>
+  <image>
+    <name>bullet</name>
+    <x>3</x>
+    <y>8</y>
+    <w>5</w>
+    <h>5</h>
+  </image>
+</atlas>
