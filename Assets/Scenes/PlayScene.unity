@@ -132,6 +132,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 114996775}
+  - component: {fileID: 114996774}
+  - component: {fileID: 114996773}
   m_Layer: 8
   m_Name: Boundaries
   m_TagString: Untagged
@@ -139,6 +141,97 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!66 &114996773
+CompositeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114996772}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_GeometryType: 0
+  m_GenerationType: 0
+  m_EdgeRadius: 0
+  m_ColliderPaths:
+  - m_Collider: {fileID: 1436772155}
+    m_ColliderPaths:
+    - - X: -295000293
+        Y: -150000000
+      - X: -295000293
+        Y: 150000000
+      - X: -305000000
+        Y: 149999707
+      - X: -304999707
+        Y: -150000000
+  - m_Collider: {fileID: 1099234301}
+    m_ColliderPaths:
+    - - X: 294999707
+        Y: 140000000
+      - X: 294999707
+        Y: 150000000
+      - X: -295000000
+        Y: 149999707
+      - X: -294999707
+        Y: 140000000
+  - m_Collider: {fileID: 896182982}
+    m_ColliderPaths:
+    - - X: 304999707
+        Y: -150000000
+      - X: 304999707
+        Y: 150000000
+      - X: 295000000
+        Y: 149999707
+      - X: 295000293
+        Y: -150000000
+  - m_Collider: {fileID: 1441433026}
+    m_ColliderPaths:
+    - - X: 294999707
+        Y: -150000000
+      - X: 294999707
+        Y: -140000000
+      - X: -295000000
+        Y: -140000293
+      - X: -294999707
+        Y: -150000000
+  m_CompositePaths:
+    m_Paths:
+    - - {x: -30.499971, y: -14.999971}
+      - {x: 30.499971, y: -14.999971}
+      - {x: 30.499943, y: 15}
+      - {x: -30.5, y: 14.999941}
+    - - {x: -29.5, y: -14.000029}
+      - {x: -29.5, y: 14}
+      - {x: 29.5, y: 13.999971}
+      - {x: 29.5, y: -14}
+  m_VertexDistance: 0.0005
+  m_OffsetDistance: 0.00005
+--- !u!50 &114996774
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114996772}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!4 &114996775
 Transform:
   m_ObjectHideFlags: 0
@@ -355,7 +448,7 @@ GameObject:
   - component: {fileID: 896182982}
   m_Layer: 8
   m_Name: Right
-  m_TagString: RightBoundary
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -446,7 +539,7 @@ GameObject:
   - component: {fileID: 1099234301}
   m_Layer: 8
   m_Name: Top
-  m_TagString: TopBoundary
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -609,7 +702,7 @@ GameObject:
   - component: {fileID: 1436772155}
   m_Layer: 8
   m_Name: Left
-  m_TagString: LeftBoundary
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -666,7 +759,7 @@ GameObject:
   - component: {fileID: 1441433026}
   m_Layer: 8
   m_Name: Bottom
-  m_TagString: BottomBoundary
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

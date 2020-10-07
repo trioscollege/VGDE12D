@@ -7,10 +7,6 @@ TagManager:
   - Mothership
   - Scout
   - Civilian
-  - LeftBoundary
-  - TopBoundary
-  - RightBoundary
-  - BottomBoundary
   layers:
   - Default
   - TransparentFX
