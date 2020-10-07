@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class GaussCannon : MonoBehaviour
 {
-    public float m_speed = 5f;
-    public float m_rateOfFire = 1f;
+    public float m_speed = 15f;
+    public float m_rateOfFire = 2f;
     public GameObject m_equippedTo;
 
     private List<Transform> m_targets;
@@ -22,11 +22,9 @@ public class GaussCannon : MonoBehaviour
         {
             if (m_targets.Count > 0)
             {
-                Debug.DrawLine(transform.position, m_targets[0].position, Color.white);
-
                 // get a bullet from the pool manager and tell it to ignore the ship shooting it
                 GameObject bullet = PoolManager.Instance.GetObjectForType("Bullet", false);
-                bullet.GetComponent<Bullet>().m_ignoreCollider = m_equippedTo.GetComponent<Collider2D>();
+                bullet.GetComponent<Bullet>().IgnoreCollider = m_equippedTo.GetComponent<Collider2D>();
                 
                 // convert the ship's velocity to 3D because we can't perform vector math between 3D and 2D vectors
                 Vector3 shipVelocity = m_equippedTo.GetComponent<Rigidbody2D>().velocity;

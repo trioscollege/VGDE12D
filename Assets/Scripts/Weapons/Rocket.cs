@@ -1,12 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D)), RequireComponent(typeof(CapsuleCollider2D))]
 public class Rocket : MonoBehaviour
 {
     [HideInInspector]
-    public Collider2D m_ignoreCollider;
+    public Collider2D IgnoreCollider { get; set; }
     Rigidbody2D m_rigidbody;
 
     void Start()
@@ -35,7 +33,7 @@ public class Rocket : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other != m_ignoreCollider)
+        if (other != IgnoreCollider)
         {
             PoolManager.Instance.PoolObject(gameObject);
         }

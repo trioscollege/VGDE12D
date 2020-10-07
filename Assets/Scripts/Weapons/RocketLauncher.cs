@@ -23,7 +23,7 @@ public class RocketLauncher : MonoBehaviour
             {
                 GameObject rocket = PoolManager.Instance.GetObjectForType("Rocket", false);
                 Rocket script = rocket.GetComponent<Rocket>();
-                script.m_ignoreCollider = m_equippedTo.GetComponent<Collider2D>();
+                script.IgnoreCollider = m_equippedTo.GetComponent<Collider2D>();
                 
                 // start the rocket in the right direction
                 rocket.GetComponent<Rigidbody2D>().AddForce((m_targets[0].position - transform.position).normalized * m_acceleration, ForceMode2D.Force);

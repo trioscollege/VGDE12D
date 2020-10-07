@@ -42,4 +42,11 @@
     <w>10</w>
     <h>10</h>
   </image>
+  <image>
+    <name>missile</name>
+    <x>134</x>
+    <y>8</y>
+    <w>11</w>
+    <h>10</h>
+  </image>
 </atlas>
