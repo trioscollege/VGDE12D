@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 3990321696522653712}
   - component: {fileID: 3990321696522653727}
   - component: {fileID: 3990321696522653726}
-  - component: {fileID: 6058015039522870108}
+  - component: {fileID: 3427097911381226212}
   m_Layer: 9
   m_Name: Scout
   m_TagString: Scout
@@ -121,7 +121,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3990321696522653715}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -167,7 +167,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &6058015039522870108
+--- !u!114 &3427097911381226212
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -176,12 +176,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 3990321696522653715}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 938a57fa3dfc72844aa68c4bd2ff4c5b, type: 3}
+  m_Script: {fileID: 11500000, guid: 76199fff7d0265f4ab69a4a40a5df275, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_objectToMove: {fileID: 0}
   m_maxSpeed: 5
-  m_turnTime: 2
-  m_turnTimeVariance: 1
+  m_turnSpeed: 1
+  m_wanderCircleDistance: 20
+  m_wanderCircleRadius: 5
+  m_wanderAngleAdjustment: 0.5
+  m_avoidThese:
+    serializedVersion: 2
+    m_Bits: 256
+  m_avoidDistance: 5
+  m_target: {fileID: 0}
+  m_slowingRadius: 5
 --- !u!1001 &7543833833737372010
 PrefabInstance:
   m_ObjectHideFlags: 0

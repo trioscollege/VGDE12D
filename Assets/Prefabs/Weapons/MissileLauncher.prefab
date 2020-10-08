@@ -71,6 +71,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_speed: 5
-  m_turnSpeed: 100
+  m_turnSpeed: 5
   m_rateOfFire: 0.25
   m_equippedTo: {fileID: 0}

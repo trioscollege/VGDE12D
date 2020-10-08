@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
     // Use this for initialization
     void OnEnable()
     {
-        // first state of the game
+        // first state of the game, change this for testing purposes
         NewGameState(new IntroState());
         SceneManager.sceneLoaded += OnSceneLoaded;
     }

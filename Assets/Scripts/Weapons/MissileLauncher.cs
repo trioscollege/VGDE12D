@@ -4,7 +4,7 @@ using UnityEngine;
 public class MissileLauncher : MonoBehaviour
 {
     public float m_speed = 5f;
-    public float m_turnSpeed = 100f;
+    public float m_turnSpeed = 5f;
     public float m_rateOfFire = 0.25f;
     public GameObject m_equippedTo;
 

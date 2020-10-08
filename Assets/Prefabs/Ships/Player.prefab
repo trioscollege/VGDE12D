@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6844416972815692852}
   - component: {fileID: 6844416972815692849}
   - component: {fileID: 6844416972815692854}
-  - component: {fileID: 8329531896068670672}
+  - component: {fileID: 386852288601425808}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -72,7 +72,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &8329531896068670672
+--- !u!114 &386852288601425808
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -81,12 +81,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 6844416972815692853}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 938a57fa3dfc72844aa68c4bd2ff4c5b, type: 3}
+  m_Script: {fileID: 11500000, guid: 2ea5327fd4b20c34386dec51865d564c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_objectToMove: {fileID: 0}
   m_maxSpeed: 5
-  m_turnTime: 2
-  m_turnTimeVariance: 1
+  m_turnSpeed: 1
+  m_wanderCircleDistance: 20
+  m_wanderCircleRadius: 5
+  m_wanderAngleAdjustment: 0.5
+  m_avoidThese:
+    serializedVersion: 2
+    m_Bits: 768
+  m_avoidDistance: 5
 --- !u!1 &6844416973078373706
 GameObject:
   m_ObjectHideFlags: 0
