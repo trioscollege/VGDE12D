@@ -16,9 +16,6 @@ public class PlayerController : MonoBehaviour
     // A boolean to restrict jumping only when on "ground".
     bool m_grounded = false;
 
-    // A static default run speed to be used for sprinting
-    static int m_DEFAULT_RUN_SPEED = 5;
-
     // Speed variable to adjust how fast the player moves
     public float m_moveSpeed = 5.0f;
     // Jump variable to adjust how high the player jumps
